@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            position: relative;
+            display: table;
+            clear: both;
+        }
+
+        .picture_play {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .picture_play .area {
+            position: relative;
+            width: 2500px;
+            height: 300px;
+        }
+
+        .picture_play img {
+            display: block;
+            float: left;
+            width: 500px;
+            height: 300px;
+            /* transform: translateX(-200%); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="picture_play clearfix">
+        <div class="area">
+            <img src="./images/aa.jpg">
+            <img src="./images/bb.jpg">
+            <img src="./images/cc.jpg">
+            <img src="./images/dd.jpg">
+            <img src="./images/ee.jpg">
+        </div>
+    </div>
+    <button type="submit" onclick="next(event)">下一张</button>
+    <span id="index">1</span>
+</body>
+<script>
+    var index = 0;
+
+    function next(event) {
+        var event = event || window.event;
+        if (event) event.stopPropagation();
+        index++;
+        var imgs = document.getElementsByTagName('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].style.transform = 'translateX(-' + 100 * index + '%)';
+        }
+        var inx = document.getElementById('index');
+        inx.innerText = index + 1;
+        if (index >= imgs.length - 1) {
+            index = -1;
+        }
+
+    }
+    setInterval(next, 3000)
+</script>
+
+</html>

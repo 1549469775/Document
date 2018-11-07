@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>云落</title>
+    <link rel="stylesheet" href="./lib/css/mini.min.css">
+    <link rel="stylesheet" href="./lib/css/normalize.min.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="singleText">
+        <p>文本绑定</p>
+        <input v-model='message' />
+        <p>{{message}}</p>
+        <button v-on:click='revase'>revase</button>
+        <p v-for='todo in todos'>{{todo}}</p>
+        <p v-if='seen'>{{message}}:v-if移除dom</p>
+        <p v-show='seen'>{{message}}:v-show隐藏display</p>
+        <button v-on:click='say'>大哥，嗨</button>
+        <header></header>
+    </div>
+    <template id="ddd">
+        <h1>{{message}}<h1>
+    </template>
+    <div id="app">
+        <h1>Hello App!</h1>
+        <p>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <router-link to="/foo">Go to Foo</router-link>
+            <router-link to="/bar">Go to Bar</router-link>
+        </p>
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
+</body>
+<script src="./lib/js/jquery-3.3.1.js"></script>
+<script src="./lib/js/Vue-v2.5.17..js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="./js/click_event.js"></script>
+<script src="./js/main.js"></script>
+
+</html>

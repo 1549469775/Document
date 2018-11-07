@@ -1,0 +1,148 @@
+<html>
+
+<head>
+
+    <title> new document </title>
+
+    <meta name="generator" content="editplus" />
+
+    <meta name="author" content="" />
+
+    <meta name="keywords" content="" />
+
+    <meta name="description" content="" />
+
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+    /* 控制字体大小 */
+        html {
+            font-size: 62.5%;
+        }
+    /* 控制图片大小 */
+        img {
+
+            width: 300px;
+
+            height: 300px;
+
+        }
+    /* 舞台样式设置 */
+        #stage {
+
+            margin-top: 200px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+            width: 300px;
+
+            height: 300px;
+
+            perspective: 1200px;
+
+            font-size: 5em;
+
+            font-weight: bold;
+
+            color: #cc00ff;
+
+        }
+
+        .cube {
+            position: relative;
+
+            transform: rotateX(-45deg) rotateY(45deg);
+
+            transform-style: preserve-3d;
+
+            transition: all .6s;
+
+        }
+
+        .side {
+
+            color: blue;
+
+            text-align: center;
+
+            width: 300px;
+
+            height: 300px;
+
+            line-height: 300px;
+
+            position: absolute;
+
+            background: #cc66ff;
+
+            opacity: 0.5;
+
+            border: 1px solid rgba(117, 4, 24, 0.5);
+
+        }
+
+        .front {
+
+            transform: translateZ(150px);
+
+        }
+
+        .back {
+
+            transform: rotateY(180deg) translateZ(150px);
+
+        }
+
+        .left {
+
+            transform: rotateY(-90deg) translateZ(150px);
+
+        }
+
+        .right {
+
+            transform: rotateY(90deg) translateZ(150px);
+
+        }
+
+        .top {
+
+            transform: rotateX(90deg) translateZ(150px);
+
+        }
+
+        .bottom {
+
+            transform: rotatex(-90deg) translateZ(150px);
+
+        }
+
+        #stage:hover .cube {
+            transform: rotateX(-45deg) rotateY(225deg);
+
+            transition: transform .1s;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="stage">
+        <div class="cube">
+            <p class="side front"><img src="6.jpg" alt="" /></p>
+            <p class="side back"><img src="2.jpg" alt="" /></p>
+            <p class="side left"><img src="3.jpg" alt="" /></p>
+            <p class="side right"><img src="4.jpg" alt="" /></p>
+            <p class="side top"><img src="5.jpg" alt="" /></p>
+            <p class="side bottom"><img src="1.jpg" alt="" /></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
